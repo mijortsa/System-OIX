@@ -391,6 +391,8 @@ var menu = (function() {
         var xdg = new MenuList(dataApplications);
         xdg.type = "collapsible";
         xdg.attach("listApplications");
+        xdg.attach("listSearch");
+        
 
 
         var places = new MenuList(dataPlaces);
@@ -837,6 +839,25 @@ var menu = (function() {
                 h.append("<div class='ui-expandable-icon'></div>");
                 //more icons left collapsible
                 h.append("<div class='ui-collapsible-icon'></div>");
+                break;
+                
+                
+            }
+				
+				case "listview-search":    {
+                 // Specify the style for listview
+                e.addClass("ui-listview");
+                // Wrap the button with a listview item
+                e.find("a").wrap("<div class=ui-listview-item/>");
+                e.find("div").removeClass("ui-listview-first-child").removeClass("ui-listview-last-child");
+                e.find("div[data-role='header']").removeClass("ui-header");
+                e.find(".ui-listview-item").slideUp().hide();
+                e.find("div[data-role='collapsible-header']").hide();
+                e.find("div[data-role='controlgroup']").unwrap("div[data-role='collapsible']");
+
+                for (var i = 0; i < e.length; i ++) {
+                    console.log(e[i].outerHTML);
+                }
                 break;
             }
         }

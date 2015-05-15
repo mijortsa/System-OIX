@@ -6,6 +6,7 @@
 
 <script type="text/javascript" src="js/jq.js"></script>
 <script type="text/javascript" src="js/menu.js"></script>
+<script type="text/javascript" src="js/search.js"></script>
 
 </head>                                                              
 <body>                                                                  
@@ -21,8 +22,13 @@
 	</div><!-- /header -->
 
 	<div data-role="content">
-		<div id="listApplications" data-role="collapsible-set"><div class="ui-collapsible-icon"></div>
-		</div>
+		<div id="header" ></div>
+		<div id="listSearch" data-role="listview-search"></div>
+<!--
+		<textarea id="test"></textarea>
+-->
+		<div id="listApplications" data-role="collapsible-set"><div class="ui-collapsible-icon"></div></div>
+		
 
 	<div data-role="listview" id="listGeneral" data-inset="true">
 		<div data-role="header">Places and settings</div>
