@@ -845,15 +845,16 @@ var menu = (function() {
             }
 				
 				case "listview-search":    {
-                 // Specify the style for listview
+                  // Specify the style for listview
                 e.addClass("ui-listview");
                 // Wrap the button with a listview item
                 e.find("a").wrap("<div class=ui-listview-item/>");
                 e.find("div").removeClass("ui-listview-first-child").removeClass("ui-listview-last-child");
                 e.find("div[data-role='header']").removeClass("ui-header");
                 e.find(".ui-listview-item").slideUp().hide();
-                e.find("div[data-role='collapsible-header']").hide();
                 e.find("div[data-role='controlgroup']").unwrap("div[data-role='collapsible']");
+                e.find(".ui-listview-item").unwrap("div[data-role='controlgroup']");
+                e.find("div[data-role='collapsible-header']").remove();
 
                 for (var i = 0; i < e.length; i ++) {
                     console.log(e[i].outerHTML);
