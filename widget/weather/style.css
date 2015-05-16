@@ -1,19 +1,6 @@
-@font-face {
-    font-family:'ClimaconsRegular';
-    src: url('../weather/fonts/climacons-webfont.eot');
-    src: url('../weather/fonts/climacons-webfont.eot?#iefix') format('embedded-opentype'), url('../weather/fonts/climacons-webfont.woff') format('woff'), url('../weather/fonts/climacons-webfont.ttf') format('truetype');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-    font-family:'Ubuntu Condensed';
-    font-style: normal;
-    font-weight: 400;
-    src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url('../weather/fonts/ubuntu.woff') format('woff');
-}
 #container {
 	width: auto;
-    height: 150px;
+    height: 170px;
     color: #eee;
     position: relative;
     margin-top: 10px;
@@ -125,7 +112,7 @@ p, span, div {
     font-family: ClimaconsRegular;
     font-size: 42px;
     position: absolute;
-    top: 26px;
+    top: 38px;
     right: 65px;
     text-align: center;
     float: center;
@@ -154,7 +141,7 @@ p, span, div {
     letter-spacing: -1px;
     position: relative;
     height: 35px;
-    top: 38px;
+    top: 48px;
     width: 100%;
     display: inline-block;
 }
@@ -172,6 +159,7 @@ p, span, div {
 }
 .details {
     font-size: 0;
+    margin-top: 10px;
 }
 .details .left {
     font-size: 24px;
@@ -233,27 +221,26 @@ p, span, div {
 /* Modals */
 #locationModal {
     display: none;
-    background: #111;
+    background: transparent;
     color: #eee;
     position: absolute;
     width: 260px;
-    height: auto;
+    height: 142px;
     bottom: 0px;
-    top: 210px;
+    top: 200px;
     padding-top: 0px; 
     padding-left: 0px;
     padding-bottom: 0px;
     -webkit-transform-origin: 0 0;
-    border-bottom: 1px solid #0a0a0a;
-    z-index: 120;
 }
 #errorMessage {
     display: none;
-    background: #444;
+    background: transparent;
     position: absolute;
-    width: 250px;
-    top: 60px;
-    padding: 25px;
+    width: 260px;
+    height: 100px;
+    top: 210px;
+    padding-top: 20px;
     -webkit-transform-origin: 0 0;
 }
 #locationModal input[type=text] {
@@ -277,27 +264,21 @@ p, span, div {
     background-position: 50%;
     outline: none;
 }
-#locationModal .measurement {
-    font-family:"ClimaconsRegular";
-    font-size: 32px;
-}
-#locationModal .measurement span {
-    padding: 0 7px 5px 10px;
-}
 #locationModal .speed span {
     line-height: 17px;
     padding: 0 7px;
     width: 42px;
     box-sizing: border-box;
+    font-size: 10px;
     height: 22px;
     text-align: center;
 }
 .toggleswitch {
-    margin-top: 10px;
+    margin-top: 1px;
 }
 .toggleswitch span {
     display: inline-block;
-    line-height: 1;
+    /*line-height: 22px;*/
     -webkit-transition: 150ms ease background-color;
     border: 2px solid #222;
     border-right: 0;
@@ -310,12 +291,18 @@ p, span, div {
 .toggleswitch span:last-child {
     border-right: 2px solid #222;
 }
+#locationModal .measurement {
+    font-family:"ClimaconsRegular";
+    font-size: 24px;
+}
+#locationModal .measurement span {
+    padding: 0 7px 2px 5px;
+}
 #locationModal .measurement span[data-type=k] {
     font-family:"Ubuntu Condensed";
-    font-size: 18px;
-    line-height: 36px;
-    height: 37px;
-    padding: 0px 14px 0px;
+    font-size: 14px;
+    line-height: 26px;
+    padding: 0px 11px 0px;
     vertical-align: top;
 }
 #locationModal .launcher {
@@ -361,7 +348,7 @@ p, span, div {
 }
 .color {
     font-size: 0;
-    margin-top: 10px;
+    margin-top: 0px;
     display: inline-block;
     border: 2px solid #333;
 }
@@ -385,8 +372,8 @@ span[data-color=gradient] {
     color: white;
     -webkit-transition: 150ms ease background;
     font-family:"Ubuntu Condensed";
-    font-size: 17px;
-    padding: 3px 10px;
+    font-size: 14px;
+    padding: 2px 10px;
     letter-spacing: -1px;
     margin-top: 10px;
     display: inline-block;
@@ -424,19 +411,21 @@ input[type="range"]::-webkit-slider-thumb:active {
     background: -webkit-radial-gradient(#999, #ddd);
 }
 .credits  {
-    color: #fff;
-    font-size: 10px;
+    color: #ddd;
+    font-size: 12px;
     font-family: 'Ubuntu Condensed';
     width: auto;
+    height: 95px;
     padding: 5px;
+    background-color: transparent;
  }
 .credits img {
     cursor: pointer;
     -webkit-user-drag: none;
 }
 .credits h1, .credits h3 {
-    margin-top: 0.3em;
-    margin-bottom: 0.2em;
+    margin-top: 0.2em;
+    margin-bottom: 0.1em;
     color: #fff;
     letter-spacing: 0;
     text-align: ;
@@ -447,4 +436,20 @@ input[type="range"]::-webkit-slider-thumb:active {
 }
 .credits li {
     color: #fff;
+}
+
+/******** Fonts Family *********/
+
+@font-face {
+    font-family:'ClimaconsRegular';
+    src: url('../weather/fonts/climacons-webfont.eot');
+    src: url('../weather/fonts/climacons-webfont.eot?#iefix') format('embedded-opentype'), url('../weather/fonts/climacons-webfont.woff') format('woff'), url('../weather/fonts/climacons-webfont.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family:'Ubuntu Condensed';
+    font-style: normal;
+    font-weight: 400;
+    src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url('../weather/fonts/ubuntu.woff') format('woff');
 }

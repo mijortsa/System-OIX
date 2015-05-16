@@ -29,7 +29,7 @@ function getWeatherData(zipCode, callback) {
 	$.ajax({
 		url: 'http://xml.weather.yahoo.com/forecastrss/' + zipCode + '_f.xml?'+(Math.random() * 100),
 		success: function(data) {
-			$('#errorMessage').fadeOut(350)
+			$('#errorMessage').fadeOut(0)
 			callback($(data).children().children().children())
 		},
 		error: function(data) {
@@ -393,21 +393,21 @@ function show_settings(amount) {
 	}
 	$('.btn[tag="credits"]').click(function() {
 		$("#locationModal .input, #locationModal .full, .settings, .sync").hide()
-		$("#locationModal .credits").fadeIn(500)
+		$("#locationModal .credits").fadeIn(0)
 	})
 	$('#locationModal .credits img').click(function() {
-		$("#locationModal .credits").fadeOut(350)
-		$("#locationModal .input, #locationModal .full, .settings, .sync").fadeIn(350)
+		$("#locationModal .credits").fadeOut(0)
+		$("#locationModal .input, #locationModal .full, .settings, .sync").fadeIn(0)
 	})
 	//Show the Modal
-	$("#locationModal").fadeToggle(350)
+	$("#locationModal").fadeToggle(0)
 	if (amount != "noweather") {
-		$("#actualWeather").fadeToggle(350)
+		$("#actualWeather").fadeToggle(0)
 	}
 }
 function showError() {
-	$('#actualWeather').fadeOut(350)
-	$('#errorMessage').fadeIn(350)
+	$('#actualWeather').fadeOut(0)
+	$('#errorMessage').fadeIn(0)
 }
 function updateTitle(val) {
 	document.title = "o" + val

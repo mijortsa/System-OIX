@@ -2,7 +2,7 @@
   "name": "Typhoon",
   "description": "Check the weather",
   "version": "0.8.1",
-  "offline_enabled": true,
+  "offline_enabled": false,
   "app": {
     "launch": {
       "local_path": "index.html"
