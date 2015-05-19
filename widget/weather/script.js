@@ -49,7 +49,8 @@ function generateStats(data, callback) {
 	weather.country = $(data).filterNode('yweather:location').attr("country")
 
 	//Link
-	weather.link = $(data).filterNode('item').children().filterNode("link").text()
+	//weather.link = $(data).filterNode('item').children().filterNode("link").text()
+	weather.link = $(data).filterNode('false').children().filterNode("false").text()
 
 	//Temperature
 	weather.temperature = $(data).filterNode('item').children().filterNode("yweather:condition").attr("temp")
