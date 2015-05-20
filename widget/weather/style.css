@@ -112,36 +112,31 @@ p, span, div {
     font-family: ClimaconsRegular;
     font-size: 42px;
     position: absolute;
-    top: 38px;
-    right: 65px;
-    text-align: center;
-    float: center;
-    width: 45px;
-    height: 45px;
+    top: 37px;
+    right: 67px;
 }
 /* Sunny, Tornado, Moon, Mostly Cloudy*/
-/*#code.w0, #code.w2, #code.w31, #code.w32, #code.w34, #code.w33, #code.w36 {
-    left: 5px;
+#code.w0, #code.w2, #code.w31, #code.w32, #code.w34, #code.w33, #code.w36 {
+    right: 67px;
 }
 #code.w0, #code.w2 {
-    top: 20px;
+    top: 37px;
 }
 #code.w31, #code.w33 {
     font-size: 42px;
-    top: 20px;
+    top: 37px;
 }
 #code.w28, #code.w30 {
-    top: 20px;
-}*/
+    top: 37px;
+}
 #city {
     text-align: left;
     margin-left: 10px;
     font-size: 18px;
-    /*text-transform: uppercase;*/
     letter-spacing: -1px;
     position: relative;
     height: 35px;
-    top: 48px;
+    top: 46px;
     width: 100%;
     display: inline-block;
 }
@@ -178,7 +173,7 @@ p, span, div {
     display: inline-block;
     width: 15%;
     text-align: right;
-    word-spacing: 0;
+    word-spacing: 2px;
     letter-spacing: 0px;
 }
 .week {
@@ -236,11 +231,11 @@ p, span, div {
 }
 #errorMessage {
     display: none;
-    background: transparent;
+    background: #444;
     position: absolute;
     width: 260px;
-    height: 100px;
-    top: 210px;
+    height: 120px;
+    top: 202px;
     padding-top: 20px;
     -webkit-transform-origin: 0 0;
 }
@@ -248,7 +243,7 @@ p, span, div {
     width: 190px;
     border: 1px solid #333;
     padding: 7px;
-    margin-bottom: 5px;
+    margin-bottom: 3px;
     font-family:"Ubuntu Condensed";
     font-size: 14px;
     outline: none;
@@ -349,32 +344,31 @@ p, span, div {
 }
 .color {
     font-size: 0;
-    margin-top: 0px;
+    margin-top: 5px;
     display: inline-block;
     border: 2px solid #333;
 }
 .color span {
-    height: 14px;
-    width: 14px;
+    height: 18px;
+    width: 18px;
     display: inline-block;
-    border: 4px solid rgba(0, 0, 0, 0.4);
+    border: 2px solid rgba(0, 0, 0, 0.4);
 }
 span[data-color=gradient] {
     background: -webkit-linear-gradient(#0081d3, #e44211);
-    border: 0;
-    height: 22px;
-    width: 22px;
-    border-right: 2px solid #333;
+    height: 20px;
+    width: 20px;
+    border: 1px solid #000;
 }
 /* Credits Button */
- .btn {
+.btn-try, .btn-about {
     border: 2px solid #222;
     background: #333;
     color: white;
     -webkit-transition: 150ms ease background;
     font-family:"Ubuntu Condensed";
     font-size: 14px;
-    padding: 2px 10px;
+    padding: 3px 10px;
     letter-spacing: -1px;
     margin-top: 5px;
     display: inline-block;
@@ -382,9 +376,15 @@ span[data-color=gradient] {
     -webkit-user-drag: none;
     outline: none;
 }
-.btn:hover {
+.btn-try:hover,
+.btn-about:hover {
     background: #444;
 }
+.btn-about {
+	float:right;
+	margin-right: 10px;
+}
+
 input[type=range] {
     -webkit-appearance: none;
     width: 250px;

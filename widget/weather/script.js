@@ -50,7 +50,7 @@ function generateStats(data, callback) {
 
 	//Link
 	//weather.link = $(data).filterNode('item').children().filterNode("link").text()
-	weather.link = $(data).filterNode('false').children().filterNode("false").text()
+	weather.link = $(data).filterNode('item').children().filterNode("false").text()
 
 	//Temperature
 	weather.temperature = $(data).filterNode('item').children().filterNode("yweather:condition").attr("temp")
@@ -282,7 +282,7 @@ $(document).ready(function() {
 function init_settings() {
 
 	//Prevents Dragging on certain elements
-	$('.border .settings, .border .sync, .border .close, .border .minimize, #locationModal input, #locationModal .measurement span, #locationModal .speed span, #locationModal .loader, #locationModal a, #locationModal .color, #locationModal .btn, #errorMessage .btn, #city span, #locationModal img').mouseover(function() {
+	$('.border .settings, .border .sync, .border .close, .border .minimize, #locationModal input, #locationModal .measurement span, #locationModal .speed span, #locationModal .loader, #locationModal a, #locationModal .color, #locationModal .btn-about, #errorMessage .btn-try, #city span, #locationModal img').mouseover(function() {
 		document.title = "disabledrag"
 	}).mouseout(function() {
 		document.title = "enabledrag"
@@ -378,7 +378,7 @@ function init_settings() {
 	$("span[data-color]:not([data-color=gradient])").map(function() { $(this).css('background', '#' + $(this).attr("data-color")) })
 
 	/* Error Message Retry Button */
-	$('#errorMessage .btn').click(function() {
+	$('#errorMessage .btn-try').click(function() {
 		render(localStorage.typhoon)
 	})
 
@@ -392,7 +392,7 @@ function show_settings(amount) {
 		$("#locationModal .full").hide()
 		$("#locationModal .credits").hide()
 	}
-	$('.btn[tag="credits"]').click(function() {
+	$('.btn-about[tag="credits"]').click(function() {
 		$("#locationModal .input, #locationModal .full, .settings, .sync").hide()
 		$("#locationModal .credits").fadeIn(0)
 	})
