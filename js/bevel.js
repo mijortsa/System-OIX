@@ -30,7 +30,7 @@ function MocpPlay(){
 	}
 }*/
 function MocpPlay(){Utils.run_command("audacious -p");}
-function MocpStop(){Utils.run_command("audacious -s");}
+function MocpStop(){Utils.run_command("killall audacious");}
 function MocpForward(){Utils.run_command("audacious -f");}
 function MocpBackward(){Utils.run_command("audacious -r");}
 function MocpPause(){Utils.run_command("audacious -u");}

@@ -1,12 +1,11 @@
 #bevel {
-    background: rgba(17,17,17,0.99);
-    height: auto;
+    background: rgba(17,17,17,0.98);
+    height: 100%;
     width: 260px;
-    overflow-x: hidden;
-    overflow-y: auto;
+    overflow: hidden;
 	right:-259px;
     top: 0px;
-    bottom:80px;
+    bottom:0px;
     position:absolute;
     z-index: 150;
     -webkit-transition: right 300ms ease-in-out;
@@ -14,6 +13,8 @@
 #bevel:hover {
 	right: 0px;
 }
+
+/* Sosmed */
 #sosial_media {
 	margin-top: 30px;
 	padding: 2px 0;
@@ -50,55 +51,173 @@
 	opacity:1;
 }
 
-#mocp {
-	margin-top: 3px;
-	padding: 10px 0px 5px;
-	background: transparent;
+/* Music Player */
+#player, #control {
+	margin-top: 10px;
+	padding-top: 10px;
 	color: #ccc;
 	width:100%;
-	height: 24px;
+	height: auto;
 	text-align:center;
 	border-top: 1px solid #0a0a0a;
 	font-size: 14px;
 	font-family:'Ubuntu Condensed';
+	cursor:default;
 }
-.mocp {
-	background: transparent;
-	width:100%;
-	height: 32px;
-	font-family: 'Aurulent Sans';
-	display: inline-block;
-	text-align:center;
-	overflow-y:hidden;
-	margin-top: 10px;
-	padding: 0px;
+#buttons{
+    margin-top: 15px;
+	width:auto;
+	height: 28px;
+	float:center;
 }
-.mocp img {
+#buttons img {
 	width: 16px;
 	height: 16px;
-	margin: 0;
+	margin:0;
 	padding: 5px 15px;
-	cursor:pointer;
-	border-radius: 20px;
-	background-color: #333;
-	border: 1px solid #111;
+	float:center;
 }
-.mocp li {
-	text-decoration:none;
+#buttons li {
 	display: inline-block;
-	padding:2px;
-	margin: 1px;
-	text-align:center;
-	cursor:pointer;
+	text-decoration:none;
+	margin: 0px 2px;
+	background: #333;
+	border-radius: 20px;
+	border: 1px solid #111;
+	box-shadow: 0 0 1px #000;
+	cursor: pointer;
 }
-.mocp title {
-	font-size:10px;
-}
-.mocp li:hover img,
-.mocp .selected img{
+#buttons li:hover, 
+#buttons .selected img {
 	background-color: #444;
-	-webkit-transition: all 0.2s ease-in-out;
+	-webkit-transition: all 0.2s ease-in-out;	
 }
+
+/* weather */
+#weather-wrapper{
+	margin-top: 10px;
+	padding: 10px 0px 5px 0px;
+	background: transparent;
+	color: #ccc;
+	height: auto;
+	border-top: 1px solid #0a0a0a;
+	border-left: 2px solid #111;
+	border-right: 2px solid #111;
+	font-size: 14px;
+	font-family:'Ubuntu Condensed';
+	cursor: default;
+}
+.settings-container{
+	width:52px;
+	float:right;
+	margin-top: -20px;
+	z-index:1000;
+	position:absolute;
+	right:5px;
+}
+#weather-wrapper .settings-container img{
+    width:15px;
+    padding:5px;
+    cursor: pointer;
+    opacity: 0.8;
+}
+.sync.busy {
+    -webkit-animation-name: spin;
+    -webkit-animation-duration: 0.4s;
+    -webkit-animation-iteration-count: 6;
+    -webkit-animation-timing-function: linear;
+}
+@-webkit-keyframes spin {
+    from { -webkit-transform: rotate(0deg); }
+    to { -webkit-transform: rotate(360deg); }
+}
+#weather-wrapper .settings-container img:hover {
+	opacity: 1;
+}
+#weather {
+	background: transparent;
+	width:100%;
+	height: 130px;
+	font-family: 'Aurulent Sans';
+	display: inline-block;
+	overflow-y:hidden;
+	margin-top: 5px;
+	padding: 0px;
+}
+#inputLokasi {
+	background:#DDD;
+	color:#1A1A1A;
+	border:2px solid #4D4D4D;
+	margin-top: 10px;
+	height:27px;
+	padding:5px;
+}
+.text {
+	font-size:14px;
+	color:#aaa;
+}
+#weather-setting {
+	width: 100%;
+	height: 90px;
+	background: #111;
+	margin-top:10px;
+}
+#weather-setting .bg-chooser{
+	width:100%;
+	margin-top:7px;
+}
+#weather-setting span{
+	height:18px;
+	width:20px;
+	border:2px solid #4D4D4D;
+	float:center;
+	display:inline-block;
+}
+#weather-info {
+	width:100%;
+	margin:0 auto 0 auto;
+	cursor: default;
+}
+#weather-info-error {
+	width:180px;
+	height: 100px;
+	margin:0px auto 0 auto;
+	padding-top: 30px;
+	cursor: default;
+	font-size: 12px;
+}
+.lokasi{
+	margin-top:10px;
+	width:100%;
+	font-size:18px;
+	color:#E5E5E5;
+	font-family:'Ubuntu Condensed';
+	letter-spacing: -1px;
+}
+.ikon{
+	margin-top: 10px;
+	width:38%;
+	height:100%;
+	height: 100px;
+	float:left;
+}
+.info{
+	margin-top: 5px;
+	width:auto;
+	font-size: 11px;
+	text-align: left;
+	margin-right: auto;
+	letter-spacing: 0px;
+}
+.info h1{
+	width: 100%;
+	margin:auto;
+	font-family:'Aurulent Sans';
+	font-size: 28px;
+	letter-spacing:-2px;
+}
+
+/* System setting */
 #system_settings {
 	margin-top: 0px;
 	padding: 10px 0px 5px 0;
@@ -156,7 +275,7 @@
 	background: #1a1a1a;
 	color: #bbb;
 	bottom: 0px;
-	padding: 5px 0 15px;
+	padding: 5px 0 10px;
     cursor: default;
     text-align: center;
     border-top: 1px solid #000;
@@ -171,7 +290,7 @@
 	text-shadow: 0 0px 2px #000;
 }
 #clock-date {
-	font-size: 14px;
+	font-size: 12px;
 	font-family: 'Aurulent Sans';
 	letter-spacing: 0;
 	text-shadow: 0 0px 2px #000;
@@ -192,8 +311,8 @@
 }
 @font-face {
     font-family:'ClimaconsRegular';
-    src: url('../weather/fonts/climacons-webfont.eot');
-    src: url('../weather/fonts/climacons-webfont.eot?#iefix') format('embedded-opentype'), url('../weather/fonts/climacons-webfont.woff') format('woff'), url('../weather/fonts/climacons-webfont.ttf') format('truetype');
+    src: url('../fonts/climacons-webfont.eot');
+    src: url('../fonts/climacons-webfont.eot?#iefix') format('embedded-opentype'), url('../fonts/climacons-webfont.woff') format('woff'), url('../weather/fonts/climacons-webfont.ttf') format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -201,5 +320,5 @@
     font-family:'Ubuntu Condensed';
     font-style: normal;
     font-weight: 400;
-    src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url('../weather/fonts/ubuntu.woff') format('woff');
+    src: local('Ubuntu Condensed'), local('UbuntuCondensed-Regular'), url('../fonts/ubuntu.woff') format('woff');
 }

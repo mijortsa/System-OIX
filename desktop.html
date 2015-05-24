@@ -3,22 +3,21 @@
 <meta charset="utf-8"><!-- this is weather meta -->
 
 <meta name="viewport" content="width=device-width, initial-scale=1" /> 
-<link rel="stylesheet" href="css/desktop.css" />
-<link rel="stylesheet" href="css/bevel.css" />
+	<link rel="stylesheet" href="css/desktop.css" />
+	<link rel="stylesheet" href="css/bevel.css" />
 
-<script type="text/javascript" src="js/jq.js"></script>
-<script type="text/javascript" src="js/xml2json.js"></script>
-<script type="text/javascript" src="js/xml-background.js"></script>
-<script type="text/javascript" src="js/desktop.js"></script>
+	<script type="text/javascript" src="js/jq.js"></script>
+	<script type="text/javascript" src="js/xml2json.js"></script>
+	<script type="text/javascript" src="js/xml-background.js"></script>
+	<script type="text/javascript" src="js/desktop.js"></script>
 <!-- this is extra bevel -->
-<script type="text/javascript" src="js/time.js"></script>
-<script type="text/javascript" src="js/moment.min.js"></script>
-<script type="text/javascript" src="js/bevel.js"></script>
-
-<link href="widget/weather/style.css" rel="stylesheet"><!-- this is extra weather -->
+	<script type="text/javascript" src="js/time.js"></script>
+	<script type="text/javascript" src="js/moment.min.js"></script>
+	<script type="text/javascript" src="js/bevel.js"></script>
 
 </head>
 <body>
+<script type="text/javascript" src="js/widget-cuaca.js"></script>
   <div id="overlay"></div>
   <div id="bg"></div>
   <div id="base">
@@ -33,107 +32,45 @@
 		<a href="#" value="Sosmed3" onclick="Run3();" title="http://facebook.com/blankonlinux"><img src="img/facebook.svg"></a>
 		<a href="#" value="Sosmed4" onclick="Run4();" title="http://twitter.com/blankonlinux"><img src="img/twitter.svg"></a>
 	</div>
-	<div id="mocp">
+	<div id="player">
 		<div class="header">Music Player</div>
-		<div class="mocp">
-		<li href="#" value="" onclick="MocpBackward();" title="Backward"><img src="img/icons/media-backward.svg"></li>
-		<li href="#" value="" onclick="MocpPause();" title="Pause"><img src="img/icons/media-pause.svg"></li>
-		<li href="#" value="" onclick="MocpPlay();" title="Play"><img src="img/icons/media-play.svg"></li>
-		<li href="#" value="" onclick="MocpForward();" title="Forward"><img src="img/icons/media-forward.svg"></li>
+		<div class="control">
+		<div id="buttons">
+			<li id="prev" href="#" value="" onclick="MocpBackward();" title="Preview"><img src="img/player/prev.svg"></li>
+			<li id="play" href="#" value="" onclick="MocpPlay();" title="Play"><img src="img/player/play.svg"></li>
+			<li id="pause" href="#" value="" onclick="MocpPause();" title="Pause"><img src="img/player/pause.svg"></li>
+			<li id="stop" href="#" value="" onclick="MocpStop();" title="Stop/Quit"><img src="img/player/stop.svg"></li>
+			<li id="next" href="#" value="" onclick="MocpForward();" title="Next"><img src="img/player/next.svg"></li>
+		 </div>
+
+	<!--script src="js/jquery.js"></script-->
+	<script src="js/main.js"></script>
 	</div>
 	
 <!-- Widget Weather -->
 
-<div id="container">
-	<div id="tittle"><span>Weather</span></div>
-	<div class="border">
-		<!--div class="close">&#10005;</div>
-		<div class="minimize">&#150;</div-->
-		<div class="settings"><img src="widget/weather/settings.svg"></div>
-		<div class="sync"><img src="widget/weather/sync.svg"></div>
-	</div>
-	<div id="actualWeather">
-		<div id="city"><span></span></div>
-		<div id="code"></div>
-		<div class="details">
-			<div class="left" id="temperature"></div>
-			<div class="right">
-					<span id="windSpeed"></span><span id="windUnit"></span><br>
-					<span id="humidity"></span>
+	<div id="weather-wrapper">
+		<div class="header">Weather</div>
+		<div class="settings-container"><img src="img/settings.svg" class="settings"><img src="img/sync.svg" class="sync"></div>
+		<div id="weather-setting" style="display:none;">
+		<input id="inputLokasi"><button style="background:#222; color:#ddd; font: Sans Bold;">Check</button></input>
+			<div class="text">eg. Jakarta, London, Tokyo</div>
+			<div class="bg-chooser">
+				<span data="#004E99"></span>
+				<span data="#8A02A9"></span>
+				<span data="#001059"></span>
+				<span data="#004F1B"></span>
+				<span data="#C84408"></span>
+				<span data="#920200"></span>
+				<span data="#111111"></span>
 			</div>
+			</div>
+		<div id="weather">
+			<div id="weather-info"></div>
+			<div id="weather-info-error"></div>
 		</div>
-		<div class="week">
-			<div id="0">
-				<span class="day"></span>
-				<span class="code"></span>
-				<span class="temp"></span>
-			</div>
-			<div id="1">
-				<span class="day"></span>
-				<span class="code"></span>
-				<span class="temp"></span>
-			</div>
-			<div id="2">
-				<span class="day"></span>
-				<span class="code"></span>
-				<span class="temp"></span>
-			</div>
-			<div id="3">
-				<span class="day"></span>
-				<span class="code"></span>
-				<span class="temp"></span>
-			</div>
-			<div id="4">
-				<span class="day"></span>
-				<span class="code"></span>
-				<span class="temp"></span>
-			</div>
-		</div>
-	</div>
-</div>
-<div id="locationModal">
-	<div class="credits">
-		<img src="widget/weather/back.svg">
-		<h1 style="text-align: center">Typhoon 0.8.94</h1>
-		<li>Typhoon is a simple weather application for Linux</li>
-		<li>It is and always will be free</li>
-		<li>Source code http://gettyphoon.tk</li>
-		<li>is released under GPL-3</li>
-		<h3 style="text-align: center">Thanks for using.</h3>
-	</div>
-	<div class="input">
-	<input type="text" placeholder="Location"><span class="loader"></span><br>
-	e.g Jakarta Indonesia, Tokyo
 	</div>
 
-	<div class="full">
-		<div class="toggleswitch measurement">
-			<span data-type="c">R</span><span data-type="f">T</span><span data-type="k">K</span>
-		</div>
-		<div class="toggleswitch speed">
-			<span data-type="mph">mph</span><span data-type="kph">kph</span><span data-type="ms">m/s</span>
-		</div>
-		<div class="color">
-			<span data-color="gradient"></span>
-			<span data-color="575591"></span>
-			<span data-color="FF0097"></span>
-			<span data-color="00224B"></span>
-			<span data-color="341F1F"></span>
-			<span data-color="A05000"></span>
-			<span data-color="003B00"></span>
-			<span data-color="111111"></span>
-		</div>
-		<a class="btn-about" tag="credits">About</a>
-	</div>
-	</div>
-	<div id="errorMessage">
-		Could not connect to internet.<br>
-		Check your internet connection.<br><br>
-		<button class="btn-try">TRY AGAIN</button>
-	</div>
-	<script src="widget/weather/jquery.min.js"></script>
-	<script src="widget/weather/script.js"></script>
-	
 <!-- System System --->
 	<div id="system_settings">System Settings</div>
 	<div class="system">

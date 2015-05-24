@@ -53,7 +53,7 @@ Clock.prototype.update = function() {
 
   // TODO: i18n
   $("#clock-time").text(moment(now).format("HH:mm"));
-  $("#clock-date").text(moment(now).format("dddd, DD MMMM YYYY"));
+  $("#clock-date").text(moment(now).format("ddd, DD MMMM YYYY"));
   setTimeout(function() {
     self.update();
   }, 1000);
